@@ -71,4 +71,19 @@ dtObjectVector<-ymd_hms(
 ```{r}
 class(dtObject)
 ```
+```{r}
+typeof(dtObject)
+```
+
+```{r}
+as.double(dtObject)
+```
+
+```{r}
+Sys.timezone()
+```
+
+```{r}
+twDateTime <- ymd_hms("2019-03-20 17:00:05", tz="Asia/Taipei")
+```
 
