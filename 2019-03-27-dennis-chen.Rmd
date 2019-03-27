@@ -100,4 +100,23 @@ typeof(twDateTime)
 as.double(twDateTime)
 as.double(LisbonDateTime)
 ```
+```{r}
+ymd("1970-01-01") %>% as.integer
+ymd("1970-01-02") %>% as.integer
+ymd("2019-03-11") %>% as.integer
+```
+
+```{r}
+dt1bject<-dmy_hms("01-01-1970 00:02:53") 
+```
+```{r}
+dtObjectVector<-dmy_hms(
+  c("01-01-1980 00:02:53",
+    "11-02-1980 11:25:22")
+)
+```
+
+
+
+
 
