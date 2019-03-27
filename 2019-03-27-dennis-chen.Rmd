@@ -60,6 +60,9 @@ library(lubridate)
 ```{r}
 dtObject<-ymd_hms("1970-01-01 00:02:53")
 ```
+```{r}
+library(lubridate)
+```
 
 ```{r}
 dtObjectVector<-ymd_hms(
@@ -84,6 +87,7 @@ Sys.timezone()
 ```
 
 ```{r}
-twDateTime <- ymd_hms("2019-03-20 17:00:05", tz="Asia/Taipei")
+twDateTime <- ymd_hms ("2019-03-18 14:04:00", tz="Asia/Taipei")
+twDateTime
 ```
 
