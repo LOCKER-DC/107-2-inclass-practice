@@ -132,7 +132,7 @@ str_replace(filmVotingData$請選擇你最喜歡的影片二部,", by"," by") ->
 birthday <- filmVotingData$`出生西元年月日（驗證本人用）`
 timeStamp <- filmVotingData$Timestamp
 ```
-# 現今符號可以取代[[]]
+# 現今符號可以取代 [[]]來做選取
 ```{r}
 library(stringr)
 str_split(favoriteTwo,", ") -> favoriteTwoList # 將選擇的兩片split成兩個元素
