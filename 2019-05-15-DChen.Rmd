@@ -1,0 +1,153 @@
+---
+title: '2019-05-08'
+author: "d chen"
+date: "5/08/2019"
+output: html_document
+---
+```{r}
+StuList <- list(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuList 
+```
+```{r}
+StuDF <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuDF 
+```
+```{r}
+class(StuDF$姓名)
+
+StuDF$姓名 <- as.character(StuDF$姓名)
+class(StuDF$姓名)
+```
+```{r}
+class(StuList)
+as.data.frame(StuList) -> StuDF3
+
+class(StuDF3)
+StuDF3
+as.data.frame(StuList,stringsAsFactors = F) -> StuDF4
+class(StuDF4)
+StuDF4
+```
+```{r}
+StuDF2 <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50),
+  stringsAsFactors = FALSE
+  )
+StuDF2 
+```
+```{r}
+class(StuDF)
+typeof(StuDF)
+```
+
+```{r}
+LETTERS # R內設元素值為英文字母群的character vector
+chosenLETTERS <- LETTERS[1:15]
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+```
+```{r}
+chosenLETTERS[8]
+matObj1[8]
+```
+```{r}
+matObj1
+matObj1[3,2] 
+matObj1[c(F,F,TRUE,F,F),c(F,TRUE,F)]
+```
+```{r}
+StuDF
+StuDF[c("姓名","成績")] 
+StuDF[1:5,c("姓名","成績")] 
+```
+```{r}
+StuDF[,c("姓名","成績")]
+```
+```{r}
+matObj1[,3]
+```
+```{r}
+cbind(matObj1,letters[1:5])
+StuDF
+StuList
+StuDF[4,c("成績")]
+```
+
+```{r}
+Vector1 <- letters[1:6]
+Vector1
+
+names(Vector1)
+```
+```{r}
+names(Vector1) <- c('名稱1','名稱2','名稱3','名稱4','名稱5','名稱6')
+names(Vector1)
+```
+
+
+```{r}
+colnames(matObj1) <-c('欄位1','欄位2','欄位3')
+colnames(matObj1)
+matObj1
+```
+```{r}
+rownames(matObj1) <- c('行：1','行：2','行：3','行：4','行：5')
+matObj1
+```
+```{r}
+a <- c("1","b","TRUE")
+a
+a[[2]] <- "c" # 元素存在
+a[[5]] <- "7" # 元素不存在
+a
+```
+```{r}
+b <- list(
+  元素1=1,
+  元素2="Hello",
+  元素3=TRUE
+)
+```
+```{r}
+b[[3]] <- "FALSE"
+b[[5]] <- "7" 
+b
+```
+```{r}
+library(readr)
+exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData3.csv",
+                    col_types = cols(
+                      匯率 = col_number(),
+                      期間 = col_character()))
+```
+```{r}
+library(lubridate)
+class(exData3$期間)
+head(exData3$期間)
+exData3$期間<-ymd(exData3$期間)
+class(exData3$期間)
+```
+```{r}
+front <- ymd("1997-06-01")
+end <- ymd("1998-12-01")
+
+isAsiaCrisis <- exData3$期間 >= front & exData3$期間<= end
+#isAsiaCrisis
+"子樣本" <- exData3$期間[isAsiaCrisis]
+子樣本
+#sum(isAsiaCrisis)
+```
+```{r}
+
+```
+
